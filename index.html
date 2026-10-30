@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>32화 인트로·썸네일 검토</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{--bg:#f6f5f2;--card:#fff;--ink:#17171a;--sub:#5f5f66;--line:#e4e2dc;--accent:#782724;--pd:#b88a00;--chip:#f1eee8;--warn:#fff4e5;--warn-ink:#8a4b00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111113;--card:#1b1b1f;--ink:#f1f1f3;--sub:#a3a3ab;--line:#2c2c33;--accent:#e0726c;--pd:#f2c94c;--chip:#26262c;--warn:#2b2214;--warn-ink:#f5c27a}}
+:root[data-theme="dark"]{--bg:#111113;--card:#1b1b1f;--ink:#f1f1f3;--sub:#a3a3ab;--line:#2c2c33;--accent:#e0726c;--pd:#f2c94c;--chip:#26262c;--warn:#2b2214;--warn-ink:#f5c27a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,-apple-system,"Apple SD Gothic Neo",sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:32px 16px 80px}
+header h1{font-size:28px;margin:0 0 6px;letter-spacing:-.02em}
+header p{margin:0;color:var(--sub);font-size:15px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 8px}
+nav a{font-size:14px;padding:6px 12px;border-radius:999px;background:var(--chip);color:var(--ink);text-decoration:none}
+section{margin-top:40px}
+h2{font-size:21px;margin:0 0 4px;letter-spacing:-.01em}
+.lead{color:var(--sub);font-size:14px;margin:0 0 16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.intro{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;align-items:start}
+video{width:100%;border-radius:10px;background:#000;display:block}
+.script{max-height:460px;overflow:auto;padding:0;margin:0;list-style:none}
+.script li{display:grid;grid-template-columns:52px 1fr;gap:8px;padding:7px 8px;border-radius:8px;cursor:pointer;font-size:15px}
+.script li:hover{background:var(--chip)}
+.script li.on{background:var(--chip);box-shadow:inset 3px 0 0 var(--accent)}
+.script time{color:var(--sub);font-variant-numeric:tabular-nums;font-size:13px;padding-top:2px}
+.script .P span{color:var(--pd);font-weight:600}
+.script .P span::before{content:"PD  ";font-size:11px;font-weight:700;opacity:.8}
+.script .M span::after{content:"  삐";font-size:11px;color:var(--accent);font-weight:700}
+.legend{display:flex;gap:14px;font-size:13px;color:var(--sub);margin-top:10px;flex-wrap:wrap}
+.thumbrow{margin-bottom:26px}
+.thumbrow h3{font-size:16px;margin:0 0 10px}
+.feed{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.yt img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block}
+.yt .meta{display:grid;grid-template-columns:36px 1fr;gap:10px;margin-top:10px}
+.yt .av{width:36px;height:36px;border-radius:50%;background:#782724;color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px}
+.yt .t{font-weight:600;font-size:15.5px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.yt .c{color:var(--sub);font-size:13px;margin-top:3px}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--chip);margin-top:6px}
+.tag.best{background:var(--accent);color:#fff}
+.src{font-size:12.5px;color:var(--sub);margin-top:6px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;color:var(--sub);font-weight:600}
+blockquote{margin:0 0 12px;padding:12px 16px;border-left:4px solid var(--accent);background:var(--chip);border-radius:0 10px 10px 0;font-size:16px}
+blockquote b{color:var(--accent)}
+.warn{background:var(--warn);color:var(--warn-ink);border-radius:12px;padding:14px 16px;font-size:14.5px}
+.warn ul{margin:6px 0 0;padding-left:20px}
+footer{margin-top:48px;color:var(--sub);font-size:13px}
+@media (max-width:820px){.intro{grid-template-columns:1fr}.feed{grid-template-columns:1fr}.script{max-height:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>32화 인트로 · 썸네일·제목 검토</h1>
+<p>용감한 용팀장 인터뷰형 롱폼 · 2026-10-30 기준 · 인트로 v1(38초, 1.3배속) · 썸네일 시안 3개 × 제목 3개</p>
+</header>
+<nav><a href="#intro">① 인트로 영상</a><a href="#thumbs">② 썸네일 × 제목</a><a href="#check">③ 용팀장님 확인 필요</a></nav>
+
+<section id="intro">
+<h2>① 최근 수정된 인트로</h2>
+<p class="lead">출근길 → 오피스(정산 화면) → 퇴근 순서, 완결된 문장만 이어 붙임. 오른쪽 대사를 누르면 그 부분부터 재생돼요.</p>
+<div class="card intro">
+<div>
+<video id="v" src="assets/intro.mp4" poster="assets/intro_poster.jpg" controls playsinline preload="metadata"></video>
+<div class="legend"><span><b style="color:var(--pd)">노란 글씨</b> = PD 질문</span><span>나머지 = 용팀장</span><span><b style="color:var(--accent)">삐</b> = 강의 날짜 가림 처리</span></div>
+</div>
+<ul class="script" id="script"></ul>
+</div>
+</section>
+
+<section id="thumbs">
+<h2>② 썸네일 시안 × 제목 3개씩</h2>
+<p class="lead">유튜브 홈 피드처럼 보이게 배치. 제목은 두 줄에서 잘리는 모습 그대로예요. ★ = 추천 조합. 제목 따옴표 안은 모두 촬영본에서 실제로 한 말.</p>
+<div id="feeds"></div>
+</section>
+
+<section id="check">
+<h2>③ 용팀장님 확인이 필요한 것</h2>
+<p class="lead">썸네일·제목에 쓴 사실 가운데 업로드 전에 확인할 것.</p>
+<div class="card">
+<blockquote>"저는 원래 일은 은행에 다녔었습니다. 1금융권 은행에 다니다가 대출 관련되는 일을 했어요. <b>15년 정도</b> 일을 하다가 최근에 퇴사를 하고…"</blockquote>
+<p class="src" style="margin-top:0">원본 0008 클립 7분 21초~29초, 오피스 인터뷰. 자동 전사로 읽은 숫자라 귀로 한 번 확인이 필요해요.</p>
+<table>
+<thead><tr><th style="width:26%">항목</th><th>지금 시안에 쓴 것</th><th style="width:32%">확인할 것</th></tr></thead>
+<tbody>
+<tr><td>전 직장 · 연차</td><td>1안 썸네일 "전직 은행원", 1안 제목 "은행 15년"</td><td>출근길에서는 "대기업 다녔었는데"라고 해서 표기가 갈려요. 어느 쪽으로 쓸지</td></tr>
+<tr><td>월 7천</td><td>1·2안 썸네일 "월 7천"</td><td>영상 발언은 "결제 금액이 한 7천만 원 좀 넘게". 한 달 기준인지, 금액 노출해도 되는지</td></tr>
+<tr><td>정산 화면</td><td>1안 배경에 실결제금액 78,655,420원</td><td>실제 정산 화면을 썸네일에 크게 보여도 되는지</td></tr>
+<tr><td>가족 이야기</td><td>2안 썸네일 "애들 학교 보내고", 2안 B 제목 "하원"</td><td>아이·육아 이야기를 썸네일·제목에 노출해도 되는지</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<footer>내부 검토용 페이지예요. 링크를 아는 사람은 누구나 볼 수 있어요.</footer>
+</div>
+<script>
+const subs=[[0.08,"P","회사 출근은 이제 안 하세요?"],[1.76,"Y","회사는 지난달에 사표 내고 나왔습니다"],[4.74,"P","대기업 다니실 때보다 더 많이 버시는 거예요?"],[7.22,"Y","돈도 많이 벌고 있고"],[8.10,"Y","시간적으로도 엄청나게 자유로워졌죠"],[10.97,"Y","대략적으로 결제 금액(매출)이"],[13.13,"Y","한 7천만 원 좀 넘게 됐다"],[15.04,"P","그냥 이렇게 말만 하면 되는 거예요?"],[16.56,"Y","네네 이제 되는 거예요"],[17.82,"Y","그러니까 마치 저는 이 컴퓨터 앞에 앉아서"],[20.86,"Y","혼자 일을 하고 있는 것 같지만"],[23.10,"Y","사실은 여기 알바생들 한 열 명 정도가"],[25.98,"Y","열심히 쉬지 않고 일을 하고 있는 겁니다"],[28.49,"P","저도 이렇게 시간 자유롭게 쓰면서"],[31.05,"P","일하고 싶은데 어떻게 하면 될까요?"],[34.49,"Y","이거 배우고 싶으시면"],[35.96,"M","11월 9일에 제 무료강의하니까"]];
+const v=document.getElementById("v"),ul=document.getElementById("script");
+const fmt=t=>`${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,"0")}`;
+subs.forEach(([t,w,s],i)=>{const li=document.createElement("li");li.className=w;li.innerHTML=`<time>${fmt(t)}</time><span></span>`;li.querySelector("span").textContent=s;li.onclick=()=>{v.currentTime=t;v.play()};ul.appendChild(li)});
+v.addEventListener("timeupdate",()=>{let k=-1;subs.forEach(([t],i)=>{if(v.currentTime>=t)k=i});[...ul.children].forEach((li,i)=>li.classList.toggle("on",i===k))});
+const rows=[
+["1안 · 정산 화면 (AI 알바생 10명 두고 / 월 7천 파는 전직 은행원)","t1_settle.jpg",[
+["A",1,"\"알바생 열 명이 쉬지 않고 일해요\" 은행 15년 다니다 퇴사하고 AI 직원으로 구매대행 하는 셀러","알바생 열 명 정도가 쉬지 않고 · 은행 15년 · 퇴사"],
+["B",0,"은행 그만두고 구매대행을 본업으로, 상품 10만 개 검수를 AI 직원한테 맡긴 셀러의 하루","10만 개 상품 검수"],
+["C",0,"스마트스토어 구매대행 현역 셀러 인터뷰, AI 직원에게 맡긴 일과 끝까지 사람이 하는 일","결과치 들어오면 저는 검수를 하죠"]]],
+["2안 · 사무실 인물 (애들 학교 보내고 출근하는 / 월 7천 셀러 아빠)","t2_coffee.jpg",[
+["A",1,"\"시간적으로도 엄청 자유로워졌죠\" 회사 그만두고 AI 직원 두고 일하는 구매대행 셀러의 하루","시간적으로도 엄청나게 자유로워졌죠"],
+["B",0,"퇴근 시간이 하원 시간인 셀러, 아이랑 노는 동안에도 AI 직원이 일하는 구매대행 운영법","하원시킬 시간 · 아들이랑 노는 순간에도 AI들이 일"],
+["C",0,"직장인이 AI 위탁판매 시작하기 전에 봐야 할 현역 셀러 인터뷰, 반자동 방식이 끝난 이유","반자동 · 대량 업로드 방식은 끝났다"]]],
+["3안 · 검수 화면 (사람은 한 달 걸릴 검수 / AI는 하루면 끝냅니다)","t3_review.jpg",[
+["A",1,"\"사람이었으면 한 달에 절대 못 봐요\" 클로드 코드에 상품 검수를 가르친 구매대행 셀러","사람이었으면 한 달 만에 절대 볼 수 없는 양 · 검수하는 거를 학습시켜 놨어요"],
+["B",0,"상품 10만 개, AI 직원이 먼저 거르고 사람이 최종 확인하는 구매대행 검수 순서","팔아도 되는지 팔면 안 되는지 · 결과치 들어오면 저는 검수"],
+["C",0,"알바비 대신 AI 직원, 구매대행 상품 검수 기준을 직접 만들어 맡긴 현역 셀러 인터뷰","10만 개면 알바비만 해도 얼마야 · 어떤 기준으로 검수하는지"]]]];
+const feeds=document.getElementById("feeds");
+rows.forEach(([label,img,titles])=>{const row=document.createElement("div");row.className="thumbrow";row.innerHTML=`<h3></h3><div class="feed"></div>`;row.querySelector("h3").textContent=label;
+titles.forEach(([k,best,t,src])=>{const c=document.createElement("div");c.className="yt";c.innerHTML=`<img alt="" loading="lazy"><div class="meta"><div class="av">용</div><div><div class="t"></div><div class="c">용감한 용팀장 · 조회수 0회 · 방금</div><span class="tag${best?" best":""}"></span><div class="src"></div></div></div>`;
+c.querySelector("img").src="assets/"+img;c.querySelector("img").alt=label;c.querySelector(".t").textContent=t;c.querySelector(".tag").textContent=`${k}안${best?" ★ 추천":""} · ${t.length}자`;c.querySelector(".src").textContent="근거: "+src;row.querySelector(".feed").appendChild(c)});
+feeds.appendChild(row)});
+</script>
+</body>
+</html>
