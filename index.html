@@ -76,7 +76,7 @@ footer{margin-top:48px;color:var(--sub);font-size:13px}
 
 <section id="thumbs">
 <h2>② 썸네일 시안 × 제목 3개씩</h2>
-<p class="lead">유튜브 홈 피드처럼 보이게 배치. 제목은 두 줄에서 잘리는 모습 그대로예요. ★ = 추천 조합. 제목 따옴표 안은 모두 촬영본에서 실제로 한 말. 제목엔 업종어(구매대행 등)를 빼고, 검색 키워드는 설명란·태그로 챙겨요.</p>
+<p class="lead">유튜브 홈 피드처럼 보이게 배치. 제목은 두 줄에서 잘리는 모습 그대로예요. 9개 모두 다른 구조, ★ = 테스트 3종(썸네일마다 1개). 제목 따옴표 안은 모두 촬영본에서 실제로 한 말. 제목엔 업종어(구매대행 등)를 빼고, 검색 키워드는 설명란·태그로 챙겨요.</p>
 <div id="feeds"></div>
 </section>
 
@@ -88,23 +88,11 @@ const v=document.getElementById("v"),ul=document.getElementById("script");
 const fmt=t=>`${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,"0")}`;
 subs.forEach(([t,w,s],i)=>{const li=document.createElement("li");li.className=w;li.innerHTML=`<time>${fmt(t)}</time><span></span>`;li.querySelector("span").textContent=s;li.onclick=()=>{v.currentTime=t;v.play()};ul.appendChild(li)});
 v.addEventListener("timeupdate",()=>{let k=-1;subs.forEach(([t],i)=>{if(v.currentTime>=t)k=i});[...ul.children].forEach((li,i)=>li.classList.toggle("on",i===k))});
-const rows=[
-["1안 · 정산 화면 (AI 알바생 10명 두고 / 월 7천 파는 전직 은행원)","t1_settle.jpg",[
-["A",1,"\"알바생 열 명이 쉬지 않고 일해요\" 은행 15년 다니다 퇴사하고 AI 직원과 일하는 셀러","알바생 열 명 정도가 쉬지 않고 · 은행 15년 · 퇴사"],
-["B",0,"은행 그만두고 셀러를 본업으로, 상품 10만 개 검수를 AI 직원한테 맡긴 사람의 하루","10만 개 상품 검수"],
-["C",0,"혼자 일하는 것 같지만 AI 직원이 열 명, 맡긴 일과 끝까지 직접 하는 일","혼자 일을 하고 있는 것 같지만 · 결과치 들어오면 저는 검수를 하죠"]]],
-["2안 · 사무실 인물 (애들 학교 보내고 출근하는 / 월 7천 셀러 아빠)","t2_coffee.jpg",[
-["A",1,"\"시간적으로도 엄청 자유로워졌죠\" 회사 그만두고 AI 직원 두고 일하는 셀러의 하루","시간적으로도 엄청나게 자유로워졌죠"],
-["B",0,"퇴근 시간이 하원 시간인 셀러, 아이랑 노는 동안에도 AI 직원이 일합니다","하원시킬 시간 · 아들이랑 노는 순간에도 AI들이 일"],
-["C",0,"직장인이 부업 시작하기 전에 봐야 할 셀러 인터뷰, 손으로 하던 방식이 끝난 이유","반자동 · 대량 업로드 방식은 끝났다 · 내 손으로 50개 올리는 건 잘못된 방법"]]],
-["3안 · 검수 화면 (사람은 한 달 걸릴 검수 / AI는 하루면 끝냅니다)","t3_review.jpg",[
-["A",1,"\"사람이었으면 한 달에 절대 못 봐요\" 상품 검수를 AI 직원에게 가르친 셀러","사람이었으면 한 달 만에 절대 볼 수 없는 양 · 검수하는 거를 학습시켜 놨어요"],
-["B",0,"상품 10만 개, AI 직원이 먼저 거르고 사람이 최종 확인하는 검수 순서","팔아도 되는지 팔면 안 되는지 · 결과치 들어오면 저는 검수"],
-["C",0,"알바비 대신 AI 직원, 검수 기준을 직접 만들어 맡긴 현역 셀러 인터뷰","10만 개면 알바비만 해도 얼마야 · 어떤 기준으로 검수하는지"]]]];
+const rows=[["1안 · 정산 화면 (AI 알바생 10명 두고 / 월 7천 파는 전직 은행원)", "t1_settle.jpg", [["1인칭 선언", 1, "저는 확인만 합니다, 일은 AI 직원 열 명이 해요", "저는 이렇게 확인만 하는 거죠 · 알바생들 한 열 명 정도가"], ["의심 질문", 0, "말만 하면 진짜 되는 거예요? 은행 15년 다니다 퇴사한 셀러의 AI 사무실", "PD: 그냥 이렇게 말만 하면 되는 거예요? · 은행 15년"], ["숫자 대비", 0, "사람 직원 대신 AI 직원 열 명, 은행 그만두고 혼자 일하는 셀러의 하루", "혼자 일을 하고 있는 것 같지만 알바생들 열 명"]]], ["2안 · 사무실 인물 (애들 학교 보내고 출근하는 / 월 7천 셀러 아빠)", "t2_coffee.jpg", [["전후 비교", 1, "한 달에 한 번 받던 월급 대신 돈이 매일 들어옵니다, 회사 그만둔 셀러의 하루", "회사는 한 달에 한 번 월급 받는데 이거는 돈이 매일 들어와요"], ["하루 순서", 0, "아침엔 등교, 오후엔 하원, 그 사이엔 AI 직원이 일하는 셀러 아빠의 하루", "첫째 학교 보내고 · 하원시킬 시간"], ["반문 고백", 0, "퇴사하고 단점은 없냐고요? 아이랑 놀다가 화장실 가는 척하고 AI한테 일 시켜요", "PD: 단점은 없나요? · 화장실 가는 척하면서 일 시키고"]]], ["3안 · 검수 화면 (사람은 한 달 걸릴 검수 / AI는 하루면 끝냅니다)", "t3_review.jpg", [["반박 질문", 1, "AI가 실수하면 어떡하냐고요? 상품 10만 개 검수를 맡겨 본 셀러의 답", "PD: AI가 실수하거나 잘못하면 어떻게 해요? · 10만 개 검수"], ["결과 궁금", 0, "상품 10만 개 검수를 알바 대신 AI 직원에게 맡겼더니 생긴 일", "10만 개면 알바비만 해도 · 하루 정도면 끝나요 · 바로 보고"], ["원인 제시", 0, "AI 직원이 알바생보다 실수가 적은 이유, 검수 기준을 직접 가르친 셀러", "알바 직원이 하는 실수보다 훨씬 적어요 · 검수 기준 학습"]]]];
 const feeds=document.getElementById("feeds");
 rows.forEach(([label,img,titles])=>{const row=document.createElement("div");row.className="thumbrow";row.innerHTML=`<h3></h3><div class="feed"></div>`;row.querySelector("h3").textContent=label;
 titles.forEach(([k,best,t,src])=>{const c=document.createElement("div");c.className="yt";c.innerHTML=`<img alt="" loading="lazy"><div class="meta"><div class="av">용</div><div><div class="t"></div><div class="c">용감한 용팀장 · 조회수 0회 · 방금</div><span class="tag${best?" best":""}"></span><div class="src"></div></div></div>`;
-c.querySelector("img").src="assets/"+img;c.querySelector("img").alt=label;c.querySelector(".t").textContent=t;c.querySelector(".tag").textContent=`${k}안${best?" ★ 추천":""} · ${t.length}자`;c.querySelector(".src").textContent="근거: "+src;row.querySelector(".feed").appendChild(c)});
+c.querySelector("img").src="assets/"+img;c.querySelector("img").alt=label;c.querySelector(".t").textContent=t;c.querySelector(".tag").textContent=`${k}${best?" ★ 테스트":""} · ${t.length}자`;c.querySelector(".src").textContent="근거: "+src;row.querySelector(".feed").appendChild(c)});
 feeds.appendChild(row)});
 </script>
 </body>
